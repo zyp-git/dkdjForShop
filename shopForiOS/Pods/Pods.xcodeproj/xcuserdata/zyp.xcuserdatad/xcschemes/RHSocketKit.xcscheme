@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'CF48BCDACBCDA78D3EBE133908526911'
+               BlueprintIdentifier = 'FFC4F05684191F1B8B46D30FFD3206F1'
                BlueprintName = 'RHSocketKit'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libRHSocketKit.a'>

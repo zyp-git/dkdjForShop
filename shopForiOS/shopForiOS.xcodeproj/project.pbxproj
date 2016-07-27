@@ -21,6 +21,7 @@
 		26AA43C41D3B6FAA0000B1A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26AA43C21D3B6FAA0000B1A7 /* LaunchScreen.storyboard */; };
 		26AA43CF1D3B6FAA0000B1A7 /* shopForiOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AA43CE1D3B6FAA0000B1A7 /* shopForiOSTests.m */; };
 		26AA43DA1D3B6FAA0000B1A7 /* shopForiOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AA43D91D3B6FAA0000B1A7 /* shopForiOSUITests.m */; };
+		26C318A61D48B90C0082BFCB /* RHWebSocketChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C318A51D48B90C0082BFCB /* RHWebSocketChannel.m */; };
 		26E27A171D3C7C94009784BF /* MHAsiNetworkHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E27A0E1D3C7C94009784BF /* MHAsiNetworkHandler.m */; };
 		26E27A181D3C7C94009784BF /* MHAsiNetworkItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E27A101D3C7C94009784BF /* MHAsiNetworkItem.m */; };
 		26E27A191D3C7C94009784BF /* MHNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E27A131D3C7C94009784BF /* MHNetworkManager.m */; };
@@ -75,6 +76,8 @@
 		26AA43D51D3B6FAA0000B1A7 /* shopForiOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = shopForiOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		26AA43D91D3B6FAA0000B1A7 /* shopForiOSUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = shopForiOSUITests.m; sourceTree = "<group>"; };
 		26AA43DB1D3B6FAA0000B1A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26C318A41D48B90C0082BFCB /* RHWebSocketChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHWebSocketChannel.h; sourceTree = "<group>"; };
+		26C318A51D48B90C0082BFCB /* RHWebSocketChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHWebSocketChannel.m; sourceTree = "<group>"; };
 		26E27A0B1D3C7C94009784BF /* MHAsiNetworkDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHAsiNetworkDefine.h; sourceTree = "<group>"; };
 		26E27A0C1D3C7C94009784BF /* MHAsiNetworkDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHAsiNetworkDelegate.h; sourceTree = "<group>"; };
 		26E27A0D1D3C7C94009784BF /* MHAsiNetworkHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHAsiNetworkHandler.h; sourceTree = "<group>"; };
@@ -189,6 +192,15 @@
 			path = shopForiOSUITests;
 			sourceTree = "<group>";
 		};
+		26C318A31D48B90C0082BFCB /* WebSocket */ = {
+			isa = PBXGroup;
+			children = (
+				26C318A41D48B90C0082BFCB /* RHWebSocketChannel.h */,
+				26C318A51D48B90C0082BFCB /* RHWebSocketChannel.m */,
+			);
+			path = WebSocket;
+			sourceTree = "<group>";
+		};
 		26E27A0A1D3C7C94009784BF /* NetwrokHandle */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +234,7 @@
 		26E27A241D3CBE45009784BF /* base */ = {
 			isa = PBXGroup;
 			children = (
+				26C318A31D48B90C0082BFCB /* WebSocket */,
 				26AA43B41D3B6FAA0000B1A7 /* AppDelegate.h */,
 				26AA43B51D3B6FAA0000B1A7 /* AppDelegate.m */,
 				267DE08F1D3BCE4D00AFB7E5 /* baseViewController.h */,
@@ -469,6 +482,7 @@
 				26E27A211D3CB840009784BF /* orderManageCell.m in Sources */,
 				26E27A1D1D3C7FCF009784BF /* MBProgressHUD+Add.m in Sources */,
 				267DE0911D3BCE4D00AFB7E5 /* baseViewController.m in Sources */,
+				26C318A61D48B90C0082BFCB /* RHWebSocketChannel.m in Sources */,
 				26E27A2A1D3CCC96009784BF /* orderModel.m in Sources */,
 				26AA43B61D3B6FAA0000B1A7 /* AppDelegate.m in Sources */,
 				26AA43B31D3B6FAA0000B1A7 /* main.m in Sources */,

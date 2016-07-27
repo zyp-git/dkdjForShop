@@ -38,6 +38,7 @@ PODS:
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
   - SDWebImage/Core (3.8.1)
+  - SocketRocket (0.5.1)
 
 DEPENDENCIES:
   - AFNetworking
@@ -50,6 +51,7 @@ DEPENDENCIES:
   - RHSocketKit
   - ScreenCompatible_LFL (~> 1.0.0)
   - SDWebImage
+  - SocketRocket (~> 0.5.1)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -62,7 +64,8 @@ SPEC CHECKSUMS:
   RHSocketKit: d561c3bc833bdf490c05b32a7753f4d7b7f84dc2
   ScreenCompatible_LFL: 30d21d6109f47ae49d29f256ab133986d4bea91f
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
 
-PODFILE CHECKSUM: 368ca4ff085ec8515a3cf311ca46df4361cb1c31
+PODFILE CHECKSUM: 1312dcbc5d8da8d025d095f5bf4afc76d53f889a
 
 COCOAPODS: 1.0.1
