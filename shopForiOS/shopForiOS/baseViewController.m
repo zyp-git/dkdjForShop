@@ -7,8 +7,12 @@
 //
 
 #import "baseViewController.h"
+#import "RHWebSocketChannel.h"
 
-@interface baseViewController ()
+
+@interface baseViewController () <SRWebSocketDelegate>
+
+@property (nonatomic, strong) RHWebSocketChannel *webSocketChannel;
 
 @end
 
@@ -16,23 +20,39 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor=[UIColor whiteColor];
-    self.sysTitleColor = [UIColor colorWithRed:0/255.0 green:216/255.0 blue:226/255.0 alpha:1.0];
+    
+    _webSocketChannel = [[RHWebSocketChannel alloc] initWithURL:@"http://s-264268.gotocdn.com"];
+    _webSocketChannel.delegate = self;
+    [_webSocketChannel openConnection];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - SRWebSocketDelegate
+
+// message will either be an NSString if the server is using text
+// or NSData if the server is using binary.
+- (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message
+{
+    NSLog(@"Received: %@", message);
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)webSocketDidOpen:(SRWebSocket *)webSocket
+{
+    NSLog(@"Websocket Connected ...");
 }
-*/
+
+- (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error
+{
+    NSLog(@":( Websocket Failed With Error %@", error);
+}
+
+- (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean
+{
+    NSLog(@"WebSocket closed: code-[%ld], reason-[%@]", code, reason);
+}
+
+- (void)webSocket:(SRWebSocket *)webSocket didReceivePong:(NSData *)pongPayload
+{
+    NSLog(@"Websocket received pong");
+}
 
 @end
