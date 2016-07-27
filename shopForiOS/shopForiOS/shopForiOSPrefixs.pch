@@ -1,0 +1,20 @@
+//
+//  shopForiOSPrefixs.pch
+//  shopForiOS
+//
+//  Created by 张允鹏 on 16/7/18.
+//  Copyright © 2016年 张允鹏. All rights reserved.
+//
+
+#ifndef shopForiOSPrefixs_pch
+#define shopForiOSPrefixs_pch
+
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import "FrameAutoScaleLFL.h"
+#import "AFNetworking.h"
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* shopForiOSPrefixs_pch */
