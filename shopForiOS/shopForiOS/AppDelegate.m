@@ -29,15 +29,20 @@
     baseNavigationController * navi=[[baseNavigationController alloc]initWithRootViewController:self.tabBarController];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-
+    
     self.window.rootViewController = navi;//这里必须的，否则sharesdk会有些问题
     
     //在显示窗口子视图加入ViewController视图
-    //[window addSubview:tabBarController.view]
-    
-    _webSocketChannel = [[RHWebSocketChannel alloc] initWithURL:@"http://122.114.94.150:8888"];
+//    [window addSubview:tabBarController.view]@"ws://122.114.94.150:8888"
+//        _webSocketChannel = [[RHWebSocketChannel alloc] initWithURL:@"ws://s-264268.gotocdn.com:8888"];
+        _webSocketChannel = [[RHWebSocketChannel alloc] initWithURL:@"ws://115.29.193.48:8088"];
+//        _webSocketChannel = [[RHWebSocketChannel alloc] initWithURL:@"http://122.114.94.150:8888"];
+
     _webSocketChannel.delegate = self;
     [_webSocketChannel openConnection];
+    NSLog(@"Websocket openConnection ...");
+
+    
     return YES;
 }
 -(void)setTabBarController{
@@ -68,14 +73,19 @@
 
 // message will either be an NSString if the server is using text
 // or NSData if the server is using binary.
+
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message
 {
     NSLog(@"Received: %@", message);
 }
 
-- (void)webSocketDidOpen:(SRWebSocket *)webSocket
-{
+- (void)webSocketDidOpen:(SRWebSocket *)webSocket{
+    
     NSLog(@"Websocket Connected ...");
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:@{@"Upgrade":@"websocket",@"Connection":@"Upgrade",@"Host":@"122.114.94.150:2222",@"Origin":@"122.114.94.150:2222",@"Sec-WebSocket-Key":@"VWWwMGPlzCcFaqR55jHrFgnC" ,@"Cookie":@"ASP.NET_SessionId=g3g038kzhrjea1hb7vk1szbf; name=15042139998; password=202CB962AC59075B964B07152D234B70; type=2",@"Sec-WebSocket-Version":@"13",@"Sec-WebSocket-Extensions":@"x-webkit-deflate-frame"} options:NSJSONWritingPrettyPrinted error:&error];
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    [_webSocketChannel.webSocket send:jsonString];
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error
@@ -92,6 +102,7 @@
 {
     NSLog(@"Websocket received pong");
 }
+
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
@@ -195,5 +206,6 @@
         }
     }
 }
+
 
 @end
