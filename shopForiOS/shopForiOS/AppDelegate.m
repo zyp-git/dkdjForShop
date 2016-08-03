@@ -16,6 +16,7 @@
 @interface AppDelegate () <SRWebSocketDelegate>
 
 @property (nonatomic, strong) RHWebSocketChannel *webSocketChannel;
+@property (strong,nonatomic) SRWebSocket * webSocket;
 
 @end
 
@@ -35,11 +36,30 @@
     //在显示窗口子视图加入ViewController视图
 //    [window addSubview:tabBarController.view]@"ws://122.114.94.150:8888"
 //        _webSocketChannel = [[RHWebSocketChannel alloc] initWithURL:@"ws://s-264268.gotocdn.com:8888"];
-        _webSocketChannel = [[RHWebSocketChannel alloc] initWithURL:@"ws://115.29.193.48:8088"];
-//        _webSocketChannel = [[RHWebSocketChannel alloc] initWithURL:@"http://122.114.94.150:8888"];
+//        _webSocketChannel = [[RHWebSocketChannel alloc] initWithURL:@"ws://115.29.193.48:8088"];
+//        _webSocketChannel = [[RHWebSocketChannel alloc] initWithURL:@"ws://122.114.94.150:8888"];
+//    _webSocketChannel.delegate = self;
+//    [_webSocketChannel openConnection];
+    
+    
+    NSString * urlstr=@"ws://115.29.193.48:8088";
+    urlstr=@"http://s-264268.gotocdn.com:8888";
+//    urlstr=@"http://122.114.94.150:8888";
+//ASP.NET_SessionId=xqtey7vinh5dwgb0ucbrvi0q; name=15042139998; password=202cb962ac59075b964b07152d234b70; type=2
 
-    _webSocketChannel.delegate = self;
-    [_webSocketChannel openConnection];
+    NSURL * url = [NSURL URLWithString:urlstr];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10];
+    [request addValue:@"2" forHTTPHeaderField:@"type"];
+    [request addValue:@"eyg40uvxhti0q7vicbvnh5dw" forHTTPHeaderField:@"ASP.NET_SessionId"];
+    [request addValue:@"15042139998" forHTTPHeaderField:@"name"];
+    [request addValue:@"202cb962ac59075b964b07152d234b70" forHTTPHeaderField:@"password"];
+    
+//    NSString * str = @"ASP.NET_SessionId=xqtey7vinh5dwgb0ucbrvi0q; name=15042139998; password=202cb962ac59075b964b07152d234b70; type=2";
+//    NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
+//    request.HTTPBody = data;
+    _webSocket =[[SRWebSocket alloc]initWithURLRequest:request];
+    _webSocket.delegate=self;
+    [_webSocket open];
     NSLog(@"Websocket openConnection ...");
 
     

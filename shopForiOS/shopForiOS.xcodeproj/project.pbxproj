@@ -21,6 +21,7 @@
 		26AA43C41D3B6FAA0000B1A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26AA43C21D3B6FAA0000B1A7 /* LaunchScreen.storyboard */; };
 		26AA43CF1D3B6FAA0000B1A7 /* shopForiOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AA43CE1D3B6FAA0000B1A7 /* shopForiOSTests.m */; };
 		26AA43DA1D3B6FAA0000B1A7 /* shopForiOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AA43D91D3B6FAA0000B1A7 /* shopForiOSUITests.m */; };
+		26BDB4121D507B850057BA08 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 26BDB4111D507B850057BA08 /* libicucore.tbd */; };
 		26C318A61D48B90C0082BFCB /* RHWebSocketChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C318A51D48B90C0082BFCB /* RHWebSocketChannel.m */; };
 		26E27A171D3C7C94009784BF /* MHAsiNetworkHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E27A0E1D3C7C94009784BF /* MHAsiNetworkHandler.m */; };
 		26E27A181D3C7C94009784BF /* MHAsiNetworkItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E27A101D3C7C94009784BF /* MHAsiNetworkItem.m */; };
@@ -76,6 +77,7 @@
 		26AA43D51D3B6FAA0000B1A7 /* shopForiOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = shopForiOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		26AA43D91D3B6FAA0000B1A7 /* shopForiOSUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = shopForiOSUITests.m; sourceTree = "<group>"; };
 		26AA43DB1D3B6FAA0000B1A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26BDB4111D507B850057BA08 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		26C318A41D48B90C0082BFCB /* RHWebSocketChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHWebSocketChannel.h; sourceTree = "<group>"; };
 		26C318A51D48B90C0082BFCB /* RHWebSocketChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHWebSocketChannel.m; sourceTree = "<group>"; };
 		26E27A0B1D3C7C94009784BF /* MHAsiNetworkDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHAsiNetworkDefine.h; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26BDB4121D507B850057BA08 /* libicucore.tbd in Frameworks */,
 				01E266DC10EA7E7AA658273E /* libPods-shopForiOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,6 +284,7 @@
 		308F4D836C14ADCD21B9401B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				26BDB4111D507B850057BA08 /* libicucore.tbd */,
 				2571B6D1E256BD66198A870B /* libPods-shopForiOS.a */,
 			);
 			name = Frameworks;
